@@ -1,2 +1,2 @@
-# social_chain
+# Scavenger Hunt Dapp
 Nebulas Dapp dev
