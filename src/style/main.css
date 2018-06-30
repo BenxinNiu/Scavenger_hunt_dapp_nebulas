@@ -1,0 +1,40 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    width:100%;
+}
+.main_theme{
+    background-color: #006AC3 ;
+    padding: 40px 0;
+}
+.strong_font{
+    color: #444;
+    margin: 0;
+    font-size: 18px;
+    font-weight: 800;
+}
+.sub_botton{
+    text-align:center;
+    font-size:15px;
+    background: #006AC3;
+    color:#fff;
+    padding:7px;
+    cursor:pointer;
+    display:inline-block;
+    border-radius: 5px;
+    padding:3px;
+}
+.ans_input{
+    border: 0px solid;
+    background:transparent;
+    border-bottom: 2px solid black;
+    width: 55%;
+    font-size: 20px;
+    margin-right:10px;
+    outline: none;
+    color: #606060;
+}
+.alert{
+    width:90%;
+}
