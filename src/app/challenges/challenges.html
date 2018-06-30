@@ -1,0 +1,29 @@
+<div class="main_theme" ng-controller="ChallengeController as main">
+<div class="container">
+<h1 id="welcome_title">{{ title }}</h1>
+<h3>Guide you through the Nebulas</h3>
+
+    <p class="alert alert-info" ng-show="show_alert">lalalal</p>
+
+    <div class="row">
+        <div class=" board col-md-5" id="puzzel">
+            <div ng-repeat="challenge in challenges" class="leader_card" style="padding-left:14px !important;">
+                <p style="margin-bottom:6px !important;" class="question strong_font">{{ challenge.question }}</p>
+                <p class="attr">Lontitute: {{ challenge.lontitute }}</p>
+                <p class="attr">latitute: {{ challenge.latitute }}</p>
+                <p class="attr">Reward: {{ challenge.reward }}</p>
+                <br>
+                <input class="ans_input" ng-model="user_ans" type="text">
+                <p class="sub_botton" ng-click="submit_answer(user_ans,$index)">Answer</p>
+            </div>
+        </div>
+
+        <div class="board col-md-6" id="map" style="min-height:400px !important;">
+            <p ng-show="map_failed">{{map_fail_msg}}</p>
+        </div>
+
+    </div>
+
+</div>
+
+</div>
