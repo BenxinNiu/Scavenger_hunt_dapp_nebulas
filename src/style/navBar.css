@@ -1,0 +1,12 @@
+.nav_header {
+    padding: 15px;
+}
+.nav_header img {
+    display: inline-block;
+    width:50%;
+    margin-left:-38px;
+}
+.nav_header h1 {
+    width:40%;
+    display: inline-block;
+}

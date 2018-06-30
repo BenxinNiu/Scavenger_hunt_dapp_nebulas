@@ -1,0 +1,37 @@
+<div class="main_theme" ng-controller="LandingController as main">
+    <div class="container">
+        <h1 id="welcome_title"> {{ welcom_title }} </h1>
+        <!--<h2 id="sub_title"> {{ sub_title }}</h2>-->
+        <span class="sub_botton" ng-click="go('challenges')" style="background-color:#E3C800 !important; min-width:270px;">Enter Pro Mode</span>
+        <br style="margin-bottom:15px;">
+
+        <div class="row">
+            <div class="col-md-4 board_title" >{{ scavenger_board_title }}</div>
+            <div class="col-md-7 board_title" >{{ puzzel_board_title }}</div>
+
+            <div class="board col-md-4" id="scavenger">
+                <div ng-repeat="scavenger in scavengers" class="leader_card">
+                    <p class="name">Scavenger: {{scavenger.name}}</p>
+                    <p class="attr">League: {{scavenger.league}}</p>
+                    <p class="attr">Asset: {{scavenger.asset}}</p>
+                    <p class="attr">Challenge Won: {{scavenger.num_answer}}</p>
+                    <p class="attr">Challenge Attempted: {{scavenger.num_attempts}}</p>
+                </div>
+            </div>
+
+            <div class=" board col-md-7" id="puzzel">
+                <div ng-repeat="challenge in challenges" class="leader_card" style="padding-left:14px !important;">
+                   <p style="margin-bottom:6px !important;" class="question strong_font">{{ challenge.question }}</p>
+                    <p class="attr">Lontitute: {{ challenge.lontitute }}</p>
+                    <p class="attr">latitute: {{ challenge.latitute }}</p>
+                    <p class="attr">Reward: {{ challenge.reward }}</p>
+                    <br>
+                    <p class="sub_botton">Answer on Google Map</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

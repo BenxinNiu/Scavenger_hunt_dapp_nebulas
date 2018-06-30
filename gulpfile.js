@@ -4,6 +4,7 @@ const gulp = require('gulp');
 const inject= require('gulp-inject');
 const _= require('lodash');
 const spawn = require('child_process').spawn;
+const clean = require('gulp-clean');
 var node;
 gulp.task('dependencyInjection', ['lib', 'app','style','asset'], function() {
 
@@ -53,7 +54,9 @@ gulp.task('serve',['dependencyInjection'], ()=> {
         }
     });
     gulp.watch('src/**', ['dependencyInjection'], ()=> {
+        gulp.src('dev', {read: false})
+            .pipe(clean());
         console.log('server refreshed');
-        gulp.run('server');
+        gulp.run('serve');
     });
 });
