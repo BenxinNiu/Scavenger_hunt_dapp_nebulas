@@ -4,6 +4,7 @@
   "description": "Nebulas Dapp dev",
   "main": "server.js",
   "scripts": {
+    "start": "node /dev/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,12 +22,22 @@
     "angular-ui-router": "^1.0.18",
     "body-parser": "^1.18.3",
     "bootstrap": "^4.1.1",
+    "child_process": "^1.0.2",
     "config": "^1.30.0",
+    "connect": "^3.6.6",
     "express": "^4.16.3",
     "font-awesome": "^4.7.0",
     "fs": "0.0.1-security",
+    "gulp": "^3.9.1",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-run": "^1.7.1",
+    "http": "0.0.0",
     "jquery": "^3.3.1",
+    "lodash": "^4.17.10",
     "node": "^10.4.1",
     "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "gulp-inject": "^4.3.2"
   }
 }
