@@ -3,6 +3,7 @@
         <h1 id="welcome_title"> {{ welcom_title }} </h1>
         <!--<h2 id="sub_title"> {{ sub_title }}</h2>-->
         <span class="sub_botton" ng-click="go('challenges')" style="background-color:#E3C800 !important; min-width:270px;">Enter Pro Mode</span>
+        <span class="sub_botton" ng-click="go('about')" style="background-color:#E3C800 !important; min-width:270px;">what is this Dapp?</span>
         <br style="margin-bottom:15px;">
 
         <div class="row">
@@ -15,18 +16,18 @@
                     <p class="attr">League: {{scavenger.league}}</p>
                     <p class="attr">Asset: {{scavenger.asset}}</p>
                     <p class="attr">Challenge Won: {{scavenger.num_answer}}</p>
-                    <p class="attr">Challenge Attempted: {{scavenger.num_attempts}}</p>
+                    <p class="attr">Challenge Attempted: {{scavenger.attempts}}</p>
                 </div>
             </div>
 
             <div class=" board col-md-7" id="puzzel">
                 <div ng-repeat="challenge in challenges" class="leader_card" style="padding-left:14px !important;">
                    <p style="margin-bottom:6px !important;" class="question strong_font">{{ challenge.question }}</p>
-                    <p class="attr">Lontitute: {{ challenge.lontitute }}</p>
-                    <p class="attr">latitute: {{ challenge.latitute }}</p>
+                    <p class="attr">Lontitute: {{ challenge.lng }}</p>
+                    <p class="attr">latitute: {{ challenge.lat }}</p>
                     <p class="attr">Reward: {{ challenge.reward }}</p>
                     <br>
-                    <p class="sub_botton">Answer on Google Map</p>
+                    <p class="sub_botton" ng-click="go('challenges')">View on Google Map</p>
                 </div>
             </div>
 

@@ -8,13 +8,6 @@ app.controller('LandingController', ['$scope', '$state', 'contractInfo','dummyDa
     $scope.scavenger_board_title = "Leader Board";
     $scope.puzzel_board_title = "Challenges for Scavangers"
 
-    $scope.scavengers = dummyData.scavengers;
-    $scope.challenges = dummyData.challenges;
-
-    $scope.go = function(page){
-        $state.go(page);
-    };
-
     const update_challenges = (res)=>{
         if(typeof(res)==='string' && res.startsWith('Error')){
             alert("Something went wrong, Please tey again later....")
@@ -30,15 +23,47 @@ app.controller('LandingController', ['$scope', '$state', 'contractInfo','dummyDa
                 coords.push(coord);
                 cooked_res[i].clicked = false;
             }
-            $scope.challenges = cooked_res;
+            $scope.challenges = cooked_res.reverse();
             $scope.markers_list = coords;
-            $state.go('challenges');
+            $state.go('landing');
         }
     };
+
+    const update_scavengers = (res)=>{
+        if(typeof(res)==='string' && res.startsWith('Error')){
+            alert("Something went wrong, Please tey again later....")
+        }
+        else{
+            let result=[];
+            let raw_res = JSON.parse(res.result);
+            let cooked_res = JSON.parse(raw_res);
+            cooked_res.forEach((a)=>{
+                result.push(JSON.parse(a));
+            });
+            $scope.scavengers = result;
+            $state.go('landing');
+            console.log($scope.scavengers)
+        }
+    }
 
     const get_challenges = ()=>{
         nebPay.simulateCall(to_address,0,"get_all_puzzels",null,{
             listener: update_challenges
         })
     };
+
+    const get_scavengers = ()=>{
+        nebPay.simulateCall(to_address,0,"get_all_scavenger",null,{
+            listener: update_scavengers
+        })
+    };
+
+    $scope.scavengers = get_scavengers();
+    $scope.challenges = get_challenges();
+
+    $scope.go = function(page){
+        $state.go(page);
+    };
+
+
 }]);

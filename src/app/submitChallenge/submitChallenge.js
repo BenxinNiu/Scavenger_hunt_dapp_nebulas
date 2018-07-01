@@ -57,7 +57,7 @@ app.controller('newChallengeController', ['$scope', '$state', 'contractInfo','du
         let coord={};
         if($scope.currentLocation == null){
             coord.lat = 43.6;
-            coord.lng = 79.2;
+            coord.lng = -79.2;
         }
         else{
             coord = $scope.currentLocation;
@@ -78,5 +78,10 @@ app.controller('newChallengeController', ['$scope', '$state', 'contractInfo','du
             listener: res_update
         })
     }
+
+    angular.element(document).ready(function(){
+        getCurrentLocation();
+    });
+
 
 }]);
