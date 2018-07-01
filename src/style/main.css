@@ -38,3 +38,7 @@ html, body {
 .alert{
     width:90%;
 }
+label{
+    display:inline-block;
+    min-length:500px;
+}

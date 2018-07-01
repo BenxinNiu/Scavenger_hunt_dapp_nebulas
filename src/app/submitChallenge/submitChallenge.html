@@ -1,0 +1,38 @@
+<div class="main_theme" ng-controller="newChallengeController as main">
+    <div class="container">
+        <span class="sub_botton" ng-click="go('challenges')" style="background-color:#E3C800 !important; margin:15px 0 15px 0; min-width:200px;">Go Back</span>
+        <span class="sub_botton" ng-click="go('myroom')" style="background-color:#E3C800 !important; margin:15px 0 15px 0; min-width:200px;">My Room</span>
+        <div class="board">
+        <h3>{{ step_one }}</h3>
+            <label>Type your Scavenger Name: </label>
+            <input class="ans_input" id="usr_name">
+            <br>
+            <label>Choose your Scavanger League: </label>
+            <select style="margin-bottom:10px;" id="league">
+                <option value="IRON">IRON</option>
+                <option value="WATER">WATER</option>
+                <option value="FIRE">FIRE</option>
+                <option value="GOLD">GOLD</option>
+                <option value="WOOD">WOOD</option>
+            </select>
+            <br>
+            <span class="sub_botton" ng-click="register()" style="margin:15px 0 15px 0; min-width:100%;">Confirm</span>
+        </div>
+        <p class="alert alert-warning">Tips: Reward Will be taken from your Scavenger asset, Make sure
+         you are already a scavenger first!</p>
+        <p class="alert alert-info">Info: Your Current Location will be used for creating this Challenge, Please ensure you allow the access.</p>
+        <div class="board">
+            <h3>{{ step_two }}</h3>
+            <label>Create Your Question: </label>
+            <input class="ans_input" id="question">
+            <br>
+            <label>Type The Answer: </label>
+            <input class="ans_input" id="answer">
+            <br>
+            <label>Type the Reward: </label>
+            <input class="ans_input" id="reward">
+            <br>
+            <span class="sub_botton" ng-click="submit_challenge()" style="margin:15px 0 15px 0; min-width:100%;">Submit</span>
+        </div>
+    </div>
+</div>
