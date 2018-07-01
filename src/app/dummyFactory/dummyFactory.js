@@ -1,13 +1,14 @@
 app.factory('dummyData', function(){
 
     const scavengers = [
-        {name:"Benxin",
+        {name:"N/A",
             league: "IRON",
             logo: "",
-            addr: "daskbdsabkjfbakjbfjsjsa123nja2j321",
-            num_attempts: 10,
-            num_answer: 8,
-            asset: 200},
+            addr: "N/A",
+            num_attempts: "N/A",
+            num_answer: "N/A",
+            num_teleport: "N/A",
+            asset: "N/A"},
         {name:"batman",
             league: "FIRE",
             addr: "daskbdsabkjfbakjbfjsjsa123nja2j321",

@@ -1,0 +1,40 @@
+<div class="main_theme" ng-controller="myRoomController as main">
+    <div class="container">
+        <h1 id="welcome_title"> {{ welcom_title }} </h1>
+        <p class="alert alert-info">Tips: You can Claim rewards Anytime, rewards can be used to purchase
+        teleport card and submit challenges (rewards will be randomly given to Scavenger!)</p>
+        <p class="alert alert-danger" ng-show="show_alert">{{alert_msg}}</p>
+        <br style="margin-bottom:30px;">
+        <div class="row">
+            <div class="col-md-4 board_title" >{{ left_board_title }}</div>
+            <div class="col-md-7 board_title" >{{ right_board_title }}</div>
+        </div>
+<div class="row">
+    <div class="board personal" id="personal_center">
+        <p class="name">Scavenger: {{scavenger.name}}</p>
+        <p class="attr large">League: {{scavenger.league}}</p>
+        <br>
+        <p class="attr large">Scavenger ID: {{scavenger.id}}</p>
+        <br>
+        <p class="attr large">Asset: {{scavenger.asset}}</p>
+        <br>
+        <p class="attr large">Challenge Won: {{scavenger.num_answer}}</p>
+        <br>
+        <p class="attr large">Challenge Attempted: {{scavenger.num_attempts}}</p>
+        <br>
+        <p class="attr large">Teleport Card Left: {{scavenger.num_teleport}}</p>
+        <br>
+        <p class="attr large">Address From: {{scavenger.addr}}</p>
+    </div>
+    <div class="board col-md-4 personal" id="action_center">
+        <span class="sub_botton large_butt" ng-click="go('challenges')" >Go Back</span>
+        <span class="sub_botton large_butt" ng-click="go('newchallenge')" >Become Scavenger</span>
+        <span class="sub_botton large_butt" ng-click="claim_reward()" style="background-color:#E3C800 !important; min-width:270px;">Claim Daily Reward</span>
+        <span class="sub_botton large_butt" ng-click="buy_teleport(2)" style="background-color:#E3C800 !important; min-width:270px;">Buy 2 Teleport</span>
+        <span class="sub_botton large_butt" ng-click="buy_teleport(5)" style="background-color:#E3C800 !important; min-width:270px;">Buy 5 Teleport</span>
+    </div>
+</div>
+
+
+    </div>
+</div>

@@ -110,6 +110,9 @@ scavenger_contract.prototype = {
         if (scavenger_attempt.travel === "teleport" && parseInt(scavenger.num_teleport)>=1){
             scavenger.num_teleport = parseInt(scavenger.num_teleport) - 1;
         }
+        else if(scavenger_attempt.travel === "no"){
+            let a =1;
+        }
         else{
             return "could not teleport";
         }
@@ -172,7 +175,13 @@ scavenger_contract.prototype = {
     //tested
     whoami_scavenger: function(){
     const trans_from = Blockchain.transaction.from;
-    return this.scavenger_list.get(trans_from);
+    let tmp = this.scavenger_list.get(trans_from);
+    if(!tmp){
+        return "not found"
+    }
+    else{
+        return tmp;
+    }
     }
 };
 

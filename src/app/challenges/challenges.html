@@ -1,16 +1,19 @@
 <div class="main_theme" ng-controller="ChallengeController as main">
 <div class="container">
-<h1 id="welcome_title">{{ title }}</h1>
-<h3>Guide you through the Nebulas</h3>
+<h1 id="welcome_title" ng-click="go('challenges')">{{ title }}</h1>
+    <span class="sub_botton" ng-click="go('landing')" style="background-color:#E3C800 !important; min-width:120px;">Home</span>
+    <span class="sub_botton" ng-click="go('newchallenge')" style="background-color:#E3C800 !important; min-width:120px;">Submit Challenge</span>
+    <span class="sub_botton" ng-click="go('myroom')" style="background-color:#E3C800 !important; min-width:120px;">My Room</span>
+<h3 style="margin-top:10px;">Pro Mode for Scavengers</h3>
 
-    <p class="alert alert-info" ng-show="show_alert">lalalal</p>
+    <p class="alert alert-info" ng-show="show_alert">{{alert_msg}}</p>
 
     <div class="row">
         <div class=" board col-md-5" id="puzzel">
             <div ng-repeat="challenge in challenges" class="leader_card" style="padding-left:14px !important;">
                 <p style="margin-bottom:6px !important;" class="question strong_font">{{ challenge.question }}</p>
-                <p class="attr">Lontitute: {{ challenge.lontitute }}</p>
-                <p class="attr">latitute: {{ challenge.latitute }}</p>
+                <p class="attr">Lontitute: {{ challenge.lng }}</p>
+                <p class="attr">latitute: {{ challenge.lat }}</p>
                 <p class="attr">Reward: {{ challenge.reward }}</p>
                 <br>
                 <input class="ans_input" ng-model="user_ans" type="text">

@@ -6,11 +6,18 @@ app.config(function($stateProvider,$urlRouterProvider){
     $stateProvider.state('landing',{
         url: '/',
         templateUrl: "app/landing/landing.html"
-    })
+    });
     $stateProvider.state('challenges',{
         url: '/challenges',
         templateUrl: "app/challenges/challenges.html"
+    });
+    $stateProvider.state('newchallenge',{
+        url: '/newchallenge',
+        templateUrl: "app/submitChallenge/submitChallenge.html"
+    });
+    $stateProvider.state('myroom',{
+        url: '/myroom',
+        templateUrl: "app/myRoom/myRoom.html"
     })
-
 //dsas
 });
