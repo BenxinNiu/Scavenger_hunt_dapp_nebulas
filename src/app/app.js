@@ -18,6 +18,10 @@ app.config(function($stateProvider,$urlRouterProvider){
     $stateProvider.state('myroom',{
         url: '/myroom',
         templateUrl: "app/myRoom/myRoom.html"
+    });
+    $stateProvider.state('about',{
+        url: '/about',
+        templateUrl: "app/about/about.html"
     })
 //dsas
 });

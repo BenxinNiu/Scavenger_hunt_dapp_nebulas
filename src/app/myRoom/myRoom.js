@@ -4,7 +4,7 @@ app.controller('myRoomController', ['$scope', '$state', 'contractInfo','dummyDat
     const nebPay = contractInfo.nebPay;
 
     $scope.welcom_title = "Welcome to Scavenger Room";
-    $scope.scavenger = dummyData.scavengers[0];
+    $scope.scavenger = {};
     $scope.right_board_title = "Action Center";
     $scope.left_board_title = "Scavenger Information";
     $scope.show_alert = false;
@@ -22,7 +22,8 @@ app.controller('myRoomController', ['$scope', '$state', 'contractInfo','dummyDat
         }
         else{
             console.log(res.result);
-            $scope.scavenger = JSON.parse(res.result);
+            $scope.scavenger = JSON.parse(JSON.parse(res.result));
+            console.log($scope.scavenger );
             $state.go('myroom');
         }
     };
@@ -33,7 +34,7 @@ app.controller('myRoomController', ['$scope', '$state', 'contractInfo','dummyDat
         }
         else{
             $scope.show_alert = true;
-            $scope.alert_msg = "Congratulations you " + res.result;
+            $scope.alert_msg = "Congratulations Your rewards should be available soon ";
             $state.go('myroom');
         }
     };
@@ -44,7 +45,7 @@ app.controller('myRoomController', ['$scope', '$state', 'contractInfo','dummyDat
         }
         else{
             $scope.show_alert = true;
-            $scope.alert_msg =  res.result;
+            $scope.alert_msg =  "Purchase Request submitted, please refresh after successful transaction!";
             $state.go('myroom');
         }
     };

@@ -16,8 +16,9 @@
                 <p class="attr">latitute: {{ challenge.lat }}</p>
                 <p class="attr">Reward: {{ challenge.reward }}</p>
                 <br>
-                <input class="ans_input" ng-model="user_ans" type="text">
-                <p class="sub_botton" ng-click="submit_answer(user_ans,$index)">Answer</p>
+                <input class="ans_input" ng-model="user_ans" type="text" ng-show="challenge.active!=false">
+
+                <p class="sub_botton" ng-click="submit_answer(user_ans,$index)" ng-show="challenge.active!=false">Answer</p>
             </div>
         </div>
 

@@ -5,9 +5,9 @@ app.controller('ChallengeController', ['$scope', '$state', 'contractInfo','dummy
     const nebPay = contractInfo.nebPay;
 
     $scope.title = "Challenges Map on Nebulas";
-    $scope.challenges = dummyData.challenges;
+    $scope.challenges = [];
     $scope.map_failed = false;
-    $scope.markers_list = dummyData.markers;
+    $scope.markers_list = [];
     $scope.show_alert = false;
     $scope.currentLocation=null;
     $scope.go = (state)=>{
@@ -36,7 +36,7 @@ app.controller('ChallengeController', ['$scope', '$state', 'contractInfo','dummy
         }
         else{
             $scope.show_alert = true;
-            $scope.alert_msg = "Submission Result: "+ res;
+            $scope.alert_msg = "Submission Complete, Please Go to My Room to check your rewards!" ;
             $state.go('challenges');
         }
     };
@@ -56,8 +56,9 @@ app.controller('ChallengeController', ['$scope', '$state', 'contractInfo','dummy
                 coords.push(coord);
                 cooked_res[i].clicked = false;
             }
-            $scope.challenges = cooked_res;
+            $scope.challenges = cooked_res.reverse();
             $scope.markers_list = coords;
+            show_map();
             $state.go('challenges');
         }
     };
@@ -110,10 +111,10 @@ app.controller('ChallengeController', ['$scope', '$state', 'contractInfo','dummy
     };
 
     const initMap = ()=> {
-        let uluru = {lat: -25.344, lng: 131.036};
+        let toronto = {lat: 43.6, lng: -79.2};
         let map_tag = document.getElementById('map');
         let map = new google.maps.Map(
-                map_tag, {zoom: 2, center: uluru}
+                map_tag, {zoom: 2, center: toronto}
                 );
         $scope.markers_list.forEach(function(a){
             let marker =  new google.maps.Marker({position: a, map: map})
@@ -133,7 +134,7 @@ app.controller('ChallengeController', ['$scope', '$state', 'contractInfo','dummy
         }
     };
     angular.element(document).ready(function(){
-        show_map();
+        get_challenges();
         getCurrentLocation();
     });
 
