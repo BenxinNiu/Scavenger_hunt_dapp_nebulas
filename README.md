@@ -10,8 +10,8 @@ Contract address can be found in SharedCountractInfo.js Factory
 
 npm install && node run
 
-#Technology NebPay.js, Angular.js, Node.js, Npm, Bootstrap
+# Technology NebPay.js, Angular.js, Node.js, Npm, Bootstrap
 
-#mainnet contract addr
+# mainnet contract addr
 
 n1m6wT5rtKG39CSJXUfRKZnQwqesG9ZcMYb
